@@ -4,6 +4,9 @@ pipeline {
     stage('Buzz') {
       parallel {
         stage('Buzz') {
+          agent {
+            label 'BuiltIn'
+          }
           steps {
             echo 'Bees Buzz'
           }
@@ -25,8 +28,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    test = 'val'
   }
 }
