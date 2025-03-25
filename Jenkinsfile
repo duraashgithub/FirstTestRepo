@@ -13,6 +13,9 @@ pipeline {
         }
 
         stage('Parallel stage') {
+          agent {
+            label 'BuiltIn'
+          }
           steps {
             sh 'echo this is parallel stage'
           }
@@ -22,6 +25,9 @@ pipeline {
     }
 
     stage('Fluffy Test') {
+      agent {
+        label 'BuiltIn'
+      }
       steps {
         sh 'echo success!'
       }
