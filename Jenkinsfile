@@ -36,19 +36,14 @@ pipeline {
     }
 
     stage('Confirm') {
-      parallel {
-        stage('Confirm') {
-          steps {
-            input(message: 'Deploy to stage', ok: 'Yes')
-          }
-        }
+      steps {
+        input(message: 'Deploy to stage', ok: 'Yes')
+      }
+    }
 
-        stage('Success') {
-          steps {
-            echo 'deployment successful'
-          }
-        }
-
+    stage('deploy to stage') {
+      steps {
+        echo 'deployment sucess'
       }
     }
 
