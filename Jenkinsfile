@@ -35,5 +35,22 @@ pipeline {
       }
     }
 
+    stage('Confirm') {
+      parallel {
+        stage('Confirm') {
+          steps {
+            input(message: 'Deploy to stage', ok: 'Yes')
+          }
+        }
+
+        stage('Success') {
+          steps {
+            echo 'deployment successful'
+          }
+        }
+
+      }
+    }
+
   }
 }
