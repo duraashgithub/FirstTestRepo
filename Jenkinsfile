@@ -18,6 +18,7 @@ pipeline {
           }
           steps {
             sh 'echo this is parallel stage'
+            stash(name: 'TestStash', includes: '*.*')
           }
         }
 
@@ -30,6 +31,7 @@ pipeline {
       }
       steps {
         sh 'echo success!'
+        unstash 'TestStash'
       }
     }
 
