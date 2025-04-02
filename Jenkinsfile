@@ -33,7 +33,4 @@ pipeline {
     }
 
   }
-  environment {
-    test = 'val'
-  }
 }
