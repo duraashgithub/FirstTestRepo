@@ -1,7 +1,7 @@
 pipeline {
   agent none
   parameters {
-    string( name : 'DEPLOY_ENV' , defaultValue: 'DEV' , description; 'test parameter')
+    string( name : 'DEPLOY_ENV' , defaultValue: 'DEV' , description: 'test parameter')
   }
   stages {
     stage('Buzz') {
