@@ -40,7 +40,7 @@ pipeline {
 
     stage('Confirm') {
       steps {
-        input(message: 'Deploy to ${DEPLOY_ENV}', ok: 'Yes')
+        input(message: "Deploy to $DEPLOY_ENV", ok: 'Yes')
       }
     }
 
